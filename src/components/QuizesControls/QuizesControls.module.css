@@ -1,0 +1,15 @@
+.quizes-controls {
+  margin-block: 2rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.quizes-controls__create-btn {
+  color: #fff;
+  background-color: #417ec0;
+}
+
+.quizes-controls__create-btn:hover,
+.quizes-controls__create-btn:active {
+  background-color: #417ec0ce;
+}
