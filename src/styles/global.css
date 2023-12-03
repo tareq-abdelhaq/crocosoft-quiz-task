@@ -1,0 +1,15 @@
+body {
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 0.4rem;
+  border-radius: 0.2rem;
+}
