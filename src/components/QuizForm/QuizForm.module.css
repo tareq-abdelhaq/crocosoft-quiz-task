@@ -1,0 +1,19 @@
+.quiz-form {
+  border-radius: 0.2rem;
+  padding: 0.6rem;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  margin-block: 2rem;
+}
+
+.quiz-form__submit-btn {
+  display: block;
+  margin-inline-start: auto;
+  padding: 0.6rem 1rem;
+  background-color: #417ec0;
+  color: #fff;
+}
+
+.quiz-form__submit-btn:hover,
+.quiz-form__submit-btn:active {
+  background-color: #417ec0ce;
+}

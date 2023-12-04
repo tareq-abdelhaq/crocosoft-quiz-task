@@ -1,0 +1,43 @@
+.answers__header {
+  font-size: 1rem;
+}
+
+.answers__list {
+  border: 1px solid #cac8c8;
+  border-radius: 0.2rem;
+  padding: 1rem;
+  width: 90%;
+  margin: 1rem auto;
+}
+
+.answers__list-item {
+  margin-bottom: 1rem;
+}
+
+.answers__list-item:not(:last-of-type) {
+  border-bottom: 1px solid #666;
+}
+
+.answers__delete-btn {
+  display: block;
+  margin-inline-start: auto;
+  background-color: #aa1111;
+  color: #fff;
+}
+
+.answers__delete-btn:hover,
+.answers__delete-btn:active {
+  background-color: #d83232;
+}
+
+.answers__add-btn {
+  display: block;
+  width: 100%;
+  color: #fff;
+  background-color: #70b3ed;
+}
+
+.answers__add-btn:hover,
+.answers__add-btn:active {
+  background-color: #58adf7;
+}
