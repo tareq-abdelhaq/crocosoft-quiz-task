@@ -1,0 +1,43 @@
+.questions__header {
+  font-size: 1.2rem;
+}
+
+.questions__list {
+  border: 1px solid #cac8c8;
+  border-radius: 0.2rem;
+  padding: 1rem;
+  width: 90%;
+  margin: 1rem auto;
+}
+
+.questions__list-item {
+  margin-bottom: 1rem;
+}
+
+.questions__list-item:not(:last-of-type) {
+  border-bottom: 1px solid #666;
+}
+
+.questions__delete-btn {
+  display: block;
+  margin-inline-start: auto;
+  background-color: #aa1111;
+  color: #fff;
+}
+
+.questions__delete-btn:hover,
+.questions__delete-btn:active {
+  background-color: #d83232;
+}
+
+.questions__add-btn {
+  display: block;
+  width: 100%;
+  color: #fff;
+  background-color: #aaaaff;
+}
+
+.questions__add-btn:hover,
+.questions__add-btn:active {
+  background-color: #9a9af1;
+}
