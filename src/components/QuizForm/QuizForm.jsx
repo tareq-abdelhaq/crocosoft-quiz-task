@@ -1,13 +1,20 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-import { createQuiz, generateId, generateQuizDate } from "../../libs/quiz";
+import {
+  createQuiz,
+  generateId,
+  generateQuizDate,
+  editQuiz,
+} from "../../libs/quiz";
 
 import QuestionsForm from "./QuestionsForm/QuestionsForm";
 
 import classes from "./QuizForm.module.css";
 
-function QuizForm() {
+function QuizForm(props) {
+  const { initData } = props;
+
   const [quiz, setQuiz] = useState({ title: "", description: "", url: "" });
   const [questions, setQuestions] = useState([]);
 
@@ -103,22 +110,43 @@ function QuizForm() {
   function quizSubmitHandler(e) {
     e.preventDefault();
     // validate form
-    const quizData = {
-      ...quiz,
-      created: generateQuizDate(),
-      id: generateId(),
-      questions_answers: questions.map((question) => ({
-        ...question,
+    if (!initData) {
+      const quizData = {
+        ...quiz,
+        created: generateQuizDate(),
         id: generateId(),
-        answers: question.answers.map((answer) => ({
-          ...answer,
+        questions_answers: questions.map((question) => ({
+          ...question,
           id: generateId(),
+          answers: question.answers.map((answer) => ({
+            ...answer,
+            id: generateId(),
+          })),
         })),
-      })),
-    };
-    createQuiz(quizData);
+      };
+      createQuiz(quizData);
+    } else {
+      const quizData = {
+        ...quiz,
+        modified: generateQuizDate(),
+        questions_answers: questions,
+      };
+      editQuiz(quizData);
+    }
     navigate("/");
   }
+
+  useEffect(() => {
+    if (initData) {
+      setQuiz({
+        id: initData.id,
+        title: initData.title,
+        description: initData.description,
+        url: initData.url,
+      });
+      setQuestions(initData.questions_answers);
+    }
+  }, [initData]);
 
   return (
     <form className={classes["quiz-form"]} onSubmit={quizSubmitHandler}>
